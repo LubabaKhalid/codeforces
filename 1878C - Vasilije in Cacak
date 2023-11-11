@@ -1,0 +1,12 @@
+t=int(input())
+for i in range(t):
+    n,k,x=map(int,input().split())
+    sum_k=(k*(k+1))//2
+    sum_x=(x*(x+1))//2
+    total=(n*(n+1))//2
+    tem=n-k
+    sum_2=total-(tem*(tem+1))//2
+    if x>=sum_k and x<=sum_2:
+        print("YES")
+    else:
+        print("NO")

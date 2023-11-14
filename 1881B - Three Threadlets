@@ -1,0 +1,12 @@
+t=int(input())
+for i in range(t):
+    a,b,c=map(int,input().split())
+    t=min(a,b,c)
+    if (a%t or b%t or c%t):
+        print("NO")
+    else:
+        x=a//t + b//t +c//t -3
+        if x<=3:
+            print("YES")
+        else:
+            print("NO")

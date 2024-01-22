@@ -1,0 +1,24 @@
+t=int(input())
+for i in range(t):
+    n=int(input())
+    c=0
+    r=1
+    if n%2:
+        print(1)
+    elif n==2 or n==4:
+        print(2)
+    elif n==6:
+        print(3)
+    else:
+        for i in range(1,int(n/2)+1):
+            if n%i:
+                if c<=r:
+                    break
+                else:
+                    r=c
+                    c=0
+                    continue
+            else:
+                c=c+1
+        print(r)
+        

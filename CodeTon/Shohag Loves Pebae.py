@@ -9,4 +9,5 @@ for _ in range(t):
         y=i*(i-1)//2-1+d[i-1]  
         s[i]=(s[i-1]+y)%m
         d[i]=(d[i-1]+y*(i+1))%m
-    print((n - 1 + s[n-1]) % m)
+    print((n-1+s[n-1])%m)
+    

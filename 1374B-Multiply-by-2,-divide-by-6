@@ -1,4 +1,4 @@
-1374B-Multiply-by-2,-divide-by-6
+#1374B-Multiply-by-2,-divide-by-6
 
 t=int(input())
 for i in range(t):

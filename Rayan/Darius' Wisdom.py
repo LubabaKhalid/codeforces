@@ -1,3 +1,15 @@
+global ans
+def fun(r,cnt,i,l,b,ans):
+    for k in range(r,i,-1):
+        if l[i]-l[k]==1:
+            ans+=1
+            cnt+=1
+            arr.append([i,k])
+            l[i],l[k]=l[k],l[i]
+            if l[r]==b[r]:
+                r-=1
+            break
+    return ans
 t=int(input())
 for _ in range(t):
     n=int(input())
@@ -15,17 +27,10 @@ for _ in range(t):
     else:
         for i in range(n):
             d=l[i]-b[i]
-            for j in range(d):
-                for k in range(r,i,-1):
-                    if l[i]-l[k]==1:
-                        ans+=1
-                        cnt+=1
-                        arr.append([i,k])
-                        l[i],l[k]=l[k],l[i]
-                        if l[r]==b[r]:
-                            r-=1
-                        break
-        
+            j=0
+            while j<d:
+                ans=fun(r,cnt,i,l,b,ans)
+                j+=1
         print(ans)
         for x,y in arr:
             print(x+1,y+1)

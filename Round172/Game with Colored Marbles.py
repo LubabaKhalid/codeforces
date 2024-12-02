@@ -1,11 +1,24 @@
-t=int(input())
-for i in range(t):
-    n=int(input())
-    c=list(map(int,input().split()))
-    m=set(c)
-    if len(m)==1:
-        print(1)
-    elif len(m)==len(c):
-        print(4)
-    else:
-        print(len(m)+1)
+def solve():
+    t=int(input())  
+    for _ in range(t):
+        n=int(input())  
+        cnt=[0]*(n+1)          
+        a_list=list(map(int,input().split()))
+        
+        for a in a_list:
+            cnt[a]+=1
+        
+        c=0  
+        ans=0  
+        
+        for i in range(1,n+1):
+            if cnt[i]==0:
+                continue
+            if cnt[i]==1:
+                c+=1
+            else:
+                ans+=1
+        
+        ans+=(c+1)//2*2  
+        print(ans)
+solve()

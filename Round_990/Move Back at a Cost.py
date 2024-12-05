@@ -3,7 +3,6 @@ for _ in range(t):
     n=int(input())  
     a=list(map(int,input().split()))  
     result=[]
-
     for i in range(n):
         if i<n-1 and a[i]>a[i+1]:
             a[i]+=1

@@ -10,6 +10,7 @@ def main():
         n=input()
         x=n.count("2")
         y=n.count("3")
-        s=sum(int(n))
+        l=[int(d) for d in n]
+        s=sum(l)
         print(fun(x,y,s))
 main()

@@ -12,4 +12,4 @@ def main():
         y=n.count("3")
         s=sum(int(n))
         print(fun(x,y,s))
-                    
+main()

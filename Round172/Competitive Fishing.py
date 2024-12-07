@@ -13,6 +13,7 @@ for _ in range(t):
     arr.sort()
     start=0
     res=-1
+    
     for i in range(n-1,-1,-1):
         start+=arr[i]
         if start>=k:

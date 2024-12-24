@@ -1,41 +1,12 @@
-import math
 t=int(input())
-for _ in range(t):
+for i in range(t):
     n,d=map(int,input().split())
-    divisors=[]
-    
-    if n == 9:
-        m = (math.factorial(n) // 1024)
-        d = str(d)
-        d = int(d) * m
-        for odd_digit in [1, 3, 5, 7, 9]:
-            if d % odd_digit == 0:
-                divisors.append(odd_digit)
-    if n>7:
-        m=math.factorial(n)
-        d=str(d)
-        d=d*(m//64)
-        e=int(d)
-        for odd_digit in [1, 3, 5, 7, 9]:
-            if e%odd_digit==0:
-                divisors.append(odd_digit)
-       
-    elif n<=7 and n>5:
-        m=math.factorial(n)
-        d=str(d)
-        d=d*(m//8)
-        e=int(d)
-        for odd_digit in [1, 3, 5, 7, 9]:
-            if e%odd_digit==0:
-                divisors.append(odd_digit)
-     
-    else:
-        m=math.factorial(n)
-        d=str(d)
-        e=int(d)
-        for odd_digit in [1, 3, 5, 7, 9]:
-            if e%odd_digit==0:
-                divisors.append(odd_digit)
-    for j in divisors:
-        print(j,end=' ')
-    print()
+    print(1,end=' ')
+    if n>=3 or d%3==0:
+        print(3,end=' ')
+    if d==5:
+        print(5,end=' ')
+    if n>=3 or d==7:
+        print(7,end=' ')
+    if n>=6 or (n>=3 and d%3==0) or d%9==0:
+        print(9,end=' ')

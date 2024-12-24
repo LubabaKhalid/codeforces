@@ -1,8 +1,13 @@
-import math
-t=int(input())
-for i in range(t):
+def maxcoins(n):
+    if n<=3:
+        return 1
+    count=0
+    while n>3:
+        n//=4
+        count+=1
+    return 2**count
+t = int(input())
+for _ in range(t):
     n=int(input())
-    if n>3:
-        print(math.ceil(n/4))
-    else:
-        print(n)
+    print(maxcoins(n))
+

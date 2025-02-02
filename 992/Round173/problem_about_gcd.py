@@ -1,25 +1,28 @@
-def solve_case(l, r, G):
-    # Calculate the smallest multiple of G >= l
-    A = G * ((l + G - 1) // G)
-    
-    # Calculate the largest multiple of G <= r
-    B = G * (r // G)
-    
-    # Check if A is within the range [l, r] and B is also within the range [l, r]
-    if A > r or B < l:
-        return "-1 -1"  # No valid A, B in the range
-
-    # Return the result as a string formatted properly
-    return f"{A} {B}"
-
-# Read number of test cases
-t = int(input())
-results = []
-
-# Process each test case
+import math
+t=int(input())
 for _ in range(t):
-    l, r, G = map(int, input().split())
-    results.append(solve_case(l, r, G))
-
-# Print all results, one per line
-print("\n".join(results))
+    s=[]
+    c=0
+    l,r,g=map(int,input().split())
+    for i in range(l,r+1):
+        if i%g==0:
+            s.append(i)
+            c=c+1
+            if c==2:
+                break
+            
+    if c==2:
+        m=math.gcd(s[0],s[1])
+        if m==g:
+            print(s[0],s[1])
+        else:
+            print(-1,-1)
+    elif c==1:
+        if s[0]==g:
+            print(s[0],s[0])
+        else:
+            print(-1,-1)
+    else:
+        print(-1,-1)
+    
+            

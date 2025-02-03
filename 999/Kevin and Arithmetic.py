@@ -3,23 +3,10 @@ for _ in range(t):
     n=int(input())
     l=list(map(int,input().split()))
     s=0
-    c=0
     for i in range(n):
-        s=s+l[i]
-        if s%2==0:
-            c=c+1
-            s=s//2
-            while s%2==0:
-                c=c+1
-                s=s//2
-    s1=0
-    c1=0
-    for i in range(n-1,-1,-1):
-        s1=s1+l[i]
-        if s1%2==0:
-            c1=c1+1
-            s1=s1//2
-            while s1%2==0:
-                c1=c1+1
-                s1=s1//2
-    print(max(c,c1))
+        if l[i]%2==0:
+            s=s+1
+    if s==n:
+        print(s-1)
+    else:
+        print(s+1)

@@ -1,4 +1,4 @@
-t=int(input())
+'''t=int(input())
 for _ in range(t):
     n=int(input())
     l=list(map(int,input().split()))
@@ -24,5 +24,26 @@ for _ in range(t):
         if flag:
             print(c,c,a,b)
         else:
-            print(-1)
+            print(-1)'''
+            
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    l=sorted(list(map(int,input())))
+    c=0
+    a=0
+    b=0
+    for i in range(n-1,0,-1):
+        if l[i]==l[i-1]:
+            c=2*l[i]
+            del l[i]
+            del l[i-1]
+            break
+    for i in range(len(l)):
+        if abs(l[i]-l[i+1])<c:
+            print(c//2,c//2,l[i],l[i+1])
+            break
+    else:
+        print(-1)
+            
             

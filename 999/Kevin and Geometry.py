@@ -26,10 +26,13 @@ for _ in range(t):
         else:
             print(-1)'''
             
+
+            
 t=int(input())
 for _ in range(t):
     n=int(input())
-    l=sorted(list(map(int,input())))
+    l=list(map(int,input().split))
+    l=sorted(l)
     c=0
     a=0
     b=0
@@ -39,11 +42,9 @@ for _ in range(t):
             del l[i]
             del l[i-1]
             break
-    for i in range(len(l)):
+    for i in range(len(l)-1):
         if abs(l[i]-l[i+1])<c:
             print(c//2,c//2,l[i],l[i+1])
             break
     else:
         print(-1)
-            
-            

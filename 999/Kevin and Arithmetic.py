@@ -8,7 +8,8 @@ for _ in range(t):
         s=s+l[i]
         if s%2==0:
             c=c+1
-            while (s//2)%2==0:
+            s=s//2
+            while s%2==0:
                 c=c+1
                 s=s//2
     s1=0
@@ -17,7 +18,8 @@ for _ in range(t):
         s1=s1+l[i]
         if s1%2==0:
             c1=c1+1
-            while (s1//2)%2==0:
+            s1=s1//2
+            while s1%2==0:
                 c1=c1+1
                 s1=s1//2
     print(max(c,c1))

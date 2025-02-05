@@ -34,6 +34,7 @@ for _ in range(t):
         j=0
         for i in range(1,n):
             if abs(ln[i]-ln[i-1])<=1 and (ln[i]+ln[i-1])==lm[j]:
+                pass
                 
                 
                 

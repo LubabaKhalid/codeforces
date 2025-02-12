@@ -11,12 +11,12 @@ for _ in range(t):
         if y==0:
             print(x*3)
         else:
-            if x<=a:
+            if y<=a:
                 c=c+1
-                x=x-a
-            if x<=b and x!=0:
+                y=y-a
+            if y<=b and y!=0:
                 c=c+1
-                x=x-b
-            if x<=c and x!=0:
+                y=y-b
+            if y<=c and y!=0:
                 c=c+1
             print(c+(x*3))        
